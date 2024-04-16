@@ -4,22 +4,39 @@ using namespace std;
 
 int main() {
 	stack<char> stack;
-	string input = "rosor";
+	string input = "du har bra hud";
 	bool isPalindrome = true;
-	for (size_t i = input.length(); i > 0; i--)
+	char space[2] = " ";
+	for (size_t i = 0; i < input.length(); i++)
 	{
-		stack.push(input[i - 1]);
+		stack.push(input[i]);
 	}
 	for (size_t i = 0; i < input.length(); i++)
 	{
+		
+		if (stack.top() == space[0]) {
+			stack.pop();
+		}
+		if (input[i] == space[0])
+		{
+			i++;
+		}
 		if (input[i] != stack.top()) {
 			isPalindrome = false;
 			break;
 		}
-		stack.pop();
+		else
+		{
+			stack.pop();
+		}
+		
 	}
 	if (isPalindrome) {
-
+		cout << "is palindrome";
+	}
+	else
+	{
+		cout << "is not palindrome";
 	}
 
 	return 0;
