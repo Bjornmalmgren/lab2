@@ -2,9 +2,8 @@
 #include <stack>
 using namespace std;
 
-int main() {
+bool IsPalindromStacksOnly(string input) {
 	stack<char> stack;
-	string input = "du har bra hud";
 	bool isPalindrome = true;
 	char space[2] = " ";
 	for (size_t i = 0; i < input.length(); i++)
@@ -13,7 +12,7 @@ int main() {
 	}
 	for (size_t i = 0; i < input.length(); i++)
 	{
-		
+
 		if (stack.top() == space[0]) {
 			stack.pop();
 		}
@@ -29,15 +28,26 @@ int main() {
 		{
 			stack.pop();
 		}
-		
+
 	}
-	if (isPalindrome) {
+	return isPalindrome;
+}
+
+int main() {
+	string input = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	bool palindrome = false;
+	palindrome = IsPalindromStacksOnly(input);
+
+	if (palindrome) {
 		cout << "is palindrome";
 	}
 	else
 	{
 		cout << "is not palindrome";
 	}
+
+
+
 
 	return 0;
 }
