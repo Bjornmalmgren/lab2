@@ -35,20 +35,15 @@ bool IsPalindromStacksOnly(string input) {
 
 string IsAPalindromQueueAndStack(string input)
 {
-
 	queue<char> queue;
 	stack<char> stack;
-
 	//function below removes spaces in the "input"
 	input.erase(remove_if(input.begin(), input.end(), ::isspace), input.end());
 
 	for (size_t i = 0; i < input.length() / 2; i++)
 	{
-
 		stack.push(input[i]);
-
 	}
-
 	if (input.length() % 2 == 1) // removes the middle char
 	{
 		for (size_t i = (1 + input.length() / 2); i < input.length(); i++) // skips the middle char
@@ -63,7 +58,6 @@ string IsAPalindromQueueAndStack(string input)
 			queue.push(input[i]);
 		}
 	}
-
 	for (size_t i = 0; i < stack.size(); i++)
 	{
 		if (queue.front() != stack.top())
@@ -74,63 +68,25 @@ string IsAPalindromQueueAndStack(string input)
 		stack.pop();
 	}
 	return "is a palindrome";
-
-
-	//tesiting - for debugging reasons
-	//while (!stack.empty())
-	//{
-	//	std::cout << stack.top();
-	//	stack.pop();
-	//}
-	//std::cout << std::endl;
-
-
-
-	//while (!queue.empty())
-	//{
-	//	std::cout << queue.front();
-	//	queue.pop();
-	//}
-	//std::cout << std::endl;
-
-	//return "sup?";
 }
 
 int main() {
-
 	int amountOfCharMultiplier = 1;
-
 	for (int amountOfCharMultiplier = 1; amountOfCharMultiplier < 6; amountOfCharMultiplier++)
 	{
 		string input = "";
-
 		for (int j = 0; j < 1000000 * amountOfCharMultiplier; j++)
 		{
-
 			input += "af";
-
 		}
-
 		bool palindrome = false;
-
-		cout << endl;
-
 		cout << "Amout of characters that are in the palindrom: " << input.length();
-
-		cout << endl;
-
-
 		auto start1 = chrono::steady_clock::now();
-
-			palindrome = IsPalindromStacksOnly(input);
-
+		palindrome = IsPalindromStacksOnly(input);
 		auto end1 = chrono::steady_clock::now();
-
 		cout << "Stack time: \n"
 			<< chrono::duration_cast<chrono::milliseconds>(end1 - start1).count()
 			<< "ms" << endl;
-
-
 		if (palindrome) {
 			cout << "is a palindrome";
 		}
@@ -139,19 +95,13 @@ int main() {
 			cout << "is not a palindrome";
 		}
 		cout << endl;
-
 		auto start = chrono::steady_clock::now();
-
-			IsAPalindromQueueAndStack(input);
-
-		auto end = chrono::steady_clock::now();
-
 		IsAPalindromQueueAndStack(input);
-
+		auto end = chrono::steady_clock::now();
+		IsAPalindromQueueAndStack(input);
 		cout << "Queue/stack time: \n"
 			<< chrono::duration_cast<chrono::milliseconds>(end - start).count()
 			<< "ms" << endl;
-
 	}
 	return 0;
 }
