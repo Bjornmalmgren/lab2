@@ -2,16 +2,14 @@
 #include <stack>
 #include <queue>
 #include <windows.h>
+#include <chrono>
+#include <string>
 
 using namespace std;
 
 bool IsPalindromStacksOnly(string input) {
 	stack<char> stack;
 	bool isPalindrome = true;
-
-	//removed redundante
-	//char space[2] = " ";
-
 	//function below removes spaces in the "input"
 	input.erase(remove_if(input.begin(), input.end(), ::isspace), input.end());
 	for (size_t i = 0; i < input.length(); i++)
@@ -20,14 +18,6 @@ bool IsPalindromStacksOnly(string input) {
 	}
 	for (size_t i = 0; i < input.length(); i++)
 	{
-		// removed this below, redundante
-		//if (stack.top() == space[0]) {
-		//	stack.pop();
-		//}
-		//if (input[i] == space[0])
-		//{
-		//	i++;
-		//}
 		if (input[i] != stack.top()) {
 			isPalindrome = false;
 			break;
@@ -42,10 +32,9 @@ bool IsPalindromStacksOnly(string input) {
 }
 
 
+
 string IsAPalindromQueueAndStack(string input)
 {
-
-	//string input = "11115151111"; // ÅÄÖ is not working with char
 
 	queue<char> queue;
 	stack<char> stack;
@@ -81,8 +70,12 @@ string IsAPalindromQueueAndStack(string input)
 		{
 			return "is not a palindrome";
 		}
+		queue.pop();
+		stack.pop();
 	}
 	return "is a palindrome";
+
+
 	//tesiting - for debugging reasons
 	//while (!stack.empty())
 	//{
@@ -100,34 +93,67 @@ string IsAPalindromQueueAndStack(string input)
 	//}
 	//std::cout << std::endl;
 
+	//return "sup?";
 }
 
 int main() {
-	string input = "An  jiolitf nA";
-	bool palindrome = false;
-	
-	Sleep(1000);
 
-	for(int i = 0; i < 1000000; i++)
-	palindrome = IsPalindromStacksOnly(input);
+	int amountOfCharMultiplier = 1;
 
-	Sleep(1000);
-
-	if (palindrome) {
-		cout << "is a palindrome";
-	}
-	else
+	for (int amountOfCharMultiplier = 1; amountOfCharMultiplier < 6; amountOfCharMultiplier++)
 	{
-		cout << "is not a palindrome";
+		string input = "";
+
+		for (int j = 0; j < 1000000 * amountOfCharMultiplier; j++)
+		{
+
+			input += "af";
+
+		}
+
+		bool palindrome = false;
+
+		cout << endl;
+
+		cout << "Amout of characters that are in the palindrom: " << input.length();
+
+		cout << endl;
+
+
+		auto start1 = chrono::steady_clock::now();
+
+			palindrome = IsPalindromStacksOnly(input);
+
+		auto end1 = chrono::steady_clock::now();
+
+		cout << "Stack time: \n"
+			<< chrono::duration_cast<chrono::milliseconds>(end1 - start1).count()
+			<< "ms" << endl;
+
+
+		if (palindrome) {
+			cout << "is a palindrome";
+		}
+		else
+		{
+			cout << "is not a palindrome";
+		}
+		cout << endl;
+
+		auto start = chrono::steady_clock::now();
+
+			IsAPalindromQueueAndStack(input);
+
+		auto end = chrono::steady_clock::now();
+
+		IsAPalindromQueueAndStack(input);
+
+		cout << "Queue/stack time: \n"
+			<< chrono::duration_cast<chrono::milliseconds>(end - start).count()
+			<< "ms" << endl;
+
 	}
-	cout << endl;
-
-	Sleep(1000);
-
-	for (int i = 0; i < 1000000; i++)
-	IsAPalindromQueueAndStack(input);
-
-	Sleep(1000);
-
 	return 0;
 }
+
+// Conclusion, seems like the stack is faster with few number of digits when compareing palindromes but worse with larger numbers
