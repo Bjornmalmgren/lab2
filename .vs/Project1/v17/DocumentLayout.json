@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\lab2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8B197F5E-6DE7-4BEF-9F67-21E8C8B29ADE}|..\\Project2\\Project2.vcxproj|C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\Project2\\Assign2_part2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{171520F0-1609-4509-AF7F-BADB5B8E12D8}|Project1.vcxproj|C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\lab2\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{171520F0-1609-4509-AF7F-BADB5B8E12D8}|Project1.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -79,15 +82,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Assign2_part2.cpp",
+              "DocumentMoniker": "C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\Project2\\Assign2_part2.cpp",
+              "RelativeDocumentMoniker": "..\\Project2\\Assign2_part2.cpp",
+              "ToolTip": "C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\Project2\\Assign2_part2.cpp",
+              "RelativeToolTip": "..\\Project2\\Assign2_part2.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-19T16:35:14.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\lab2\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
               "ToolTip": "C:\\Users\\Mono\\Desktop\\The First Game in Mankind\\NewTerrain\\lab2\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAACgAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-18T13:20:17.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T13:20:17.461Z"
             }
           ]
         },
